@@ -30,7 +30,8 @@ class Info_carros:
     
     def retorne_preco(self):
         return self.preco
-
+    
+# Metodo para retornar todos os atributos reunidos.
     def informacoes_veiculo(self):
         return f"Modelo:{self.modelo}.\nMarca:{self.marca}.\nAno de Lançamento:{self.ano_de_lancamento}.\nPotência:{self.potencia}.\nTipo de Câmbio:{self.cambio}.\nPreço de Lançamento:R${self.preco}."
 
@@ -39,7 +40,7 @@ carro2 = Info_carros(modelo = "Fiesta Titanium 1.6 16V Flex Mec",marca = "Ford",
 carro3 = Info_carros(modelo = "Civic Sedan EX 2.0 Flex 16V Aut.4p", marca = "Honda",ano_de_lancamento = 2021,potencia = "2.0",cambio = "Automático",preco = "124.283,00")
 carro4 = Info_carros(modelo = "Etios XS 1.5 Flex 16V 5p Auto", marca = "Toyota",ano_de_lancamento = 2018,potencia = "1.5",cambio = "Automático",preco = "60.978,00")
 
-
+# Print de todos os metodos utilizados.
 print("Dados do veículo 1:")
 print(carro1.retorne_modelo())
 print(carro1.retorne_marca())
@@ -76,6 +77,7 @@ print(carro4.retorne_cambio())
 print(carro4.retorne_preco())
 print("=" *30)
 
+# Print de todos os atributos reunidos.
 print("Informações gerais dos veículos:")
 print(carro1.informacoes_veiculo())
 print("." *30)
@@ -103,7 +105,7 @@ class Cliente:
         self.cpf = cpf
         self.endereco = endereco
 
-    def consultar_info_cliente(self):
+    def consultar_info_cliente(self): # Consulta de informações do cliente, sem saldo da conta.
         return f"Dados do usuário:\nNome do usuário:{self.nome}\nCPF:{self.cpf}\nEndereço:{self.endereco}"
     
     def alterar_nome(self,alterar_nome):
@@ -127,17 +129,18 @@ class Conta_corrente(Cliente):
     def consultar_saldo(self):
         return f"O saldo da conta é de R${self.__saldo:.2f}."
     
-    def depositar(self, add_saldo: float):
+    def depositar(self, add_saldo: float): # Utilização de float para possibilitar.
         self.__saldo += add_saldo
         return f"O valor R${add_saldo:.2f} foi depositado em sua conta. Saldo atual R${self.__saldo:.2f}."
     
-    def sacar(self, retirar_saldo):
+    def sacar(self, retirar_saldo):  # Para evitar que a conta fique negativa.
         if self.__saldo >= retirar_saldo:
             self.__saldo -= retirar_saldo
             return f"O valor de R${retirar_saldo:.2f} foi retirado de sua conta. Saldo atual R${self.__saldo:.2f}."
         else:
             return f"Tentativa de saque no valor de R${retirar_saldo:.2f}. Saldo insuficiente!"
-    
+
+# Metodo polimorfico de apresentar dados do cliente adicionando detalhes sobre saldo, dentro da Conta Corrente.
     def consultar_saldo(self):
         return f"O saldo atual da conta: R${self.__saldo:.2f}."
     
