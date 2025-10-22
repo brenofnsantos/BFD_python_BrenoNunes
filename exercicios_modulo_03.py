@@ -1,12 +1,12 @@
-#Exercícios de Python para treino
+#Exercícios de revisão - Python
 
 # Conversões de tipos
 # Exercício 1 - Converta a string "123" para int e depois para float. Imprima os dois resultados.
 
 
 str_123 = "123"
-str_to_int = int(str_123)
-str_to_float = float(str_to_int)
+str_to_int = int(str_123) # Para números inteiros, sem demais casas decimais.
+str_to_float = float(str_to_int) # Float representa números com casas decimais, também chamados de números de ponto flutuante.
 
 print(str_to_int)
 print(str_to_float)
@@ -21,9 +21,9 @@ print(str_to_float)
 
 texto = "Python é incrível!"
 
-num_caracteres = len(texto)
-texto_maior = texto.upper()
-troca_texto = texto.replace("incrível","poderoso")
+num_caracteres = len(texto) # Retorna o número de itens em um objeto, como o número de caracteres em uma string ou o número de elementos em uma lista ou tupla.
+texto_maior = texto.upper() # É uma função para strings que converte todos os caracteres de uma string para letras maiúsculas, retornando uma nova string.
+troca_texto = texto.replace("incrível","poderoso") # Usado para substituir uma substring por outra em uma string, retornando uma nova string com as substituições
 
 
 print ("Esse é o total de caracteres da frase:", num_caracteres)
@@ -93,8 +93,8 @@ print(conver_cores)
 a = 15 
 b = 4
 
-div = a // b
-resto = a % b
+div = a // b # // é para calcular a divisão inteira. Realiza uma divisão e arredonda o resultado para o número inteiro mais próximo, descartando a parte decimal.
+resto = a % b # % é para calcular o resto da divisão.
 print("Esse é o resultado da divisão:", div)
 print("Esse é o resto da divisão:", resto)
 
@@ -145,10 +145,10 @@ lista_matriz = [
     [7, 8, 9]
 ]
 
-local_num = lista_matriz[1][1]
+local_num = lista_matriz[1][1] # Localiza o número 5 que está na posição 1 de 1. Lembrando que a contagem começa em 0,1,2. 
 print(local_num)
 
-lista_matriz[2][1] = [10]
+lista_matriz[2][1] = [10] # Localiza e substitui o número 8 por 10. 
 print(lista_matriz)
 
 
